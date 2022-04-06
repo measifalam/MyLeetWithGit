@@ -4,7 +4,7 @@ public class Solution {
         int majority=nums[0];
         int count=1;
         
-        for(int i=0;i<len;i++)
+        for(int i=1;i<len;i++)
         {
             if(nums[i]==majority)
             {
