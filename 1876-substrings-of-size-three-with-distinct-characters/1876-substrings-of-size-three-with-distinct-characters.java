@@ -1,37 +1,15 @@
 class Solution {
     public int countGoodSubstrings(String s) {
-        if(s.length() < 3) {
-            return 0;
+        int n = s.length();
+        int count = 0;
+        for (int i = 0; i < n - 2; i++) {
+            char a = s.charAt(i);
+            char b = s.charAt(i + 1);
+            char c = s.charAt(i + 2);
+            if (a != b && b != c && a != c) {
+                count++;
+            }
         }
-
-        var left = 0;
-        var right = 2;
-        var charFrequency = new int[26];
-        var resultCounter = 0;
-
-        while(right < s.length()) {
-
-            for(int i = left; i <= right; i++) {
-                charFrequency[s.charAt(i) - 'a']++;
-            }
-
-
-            var isValid = true;
-            for(int i = left; i <= right; i++) {
-                if(charFrequency[s.charAt(i) - 'a'] != 1) {
-                    isValid = false;
-                    break;
-                }
-            }
-            if(isValid)
-                resultCounter++;
-
-            for(int i = left; i <= right; i++) {
-                charFrequency[s.charAt(i) - 'a'] = 0;
-            }
-            right++;
-            left++;
-        }
-        return resultCounter;
+        return count;
     }
 }
