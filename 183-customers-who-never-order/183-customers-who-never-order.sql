@@ -2,8 +2,10 @@
 
 
 
-SELECT c.Name as Customers
-FROM Customers c
-WHERE c.id not in (
-SELECT o.CustomerId FROM Orders o
+
+SELECT Customers.name AS Customers 
+FROM Customers
+WHERE Customers.id NOT IN 
+(
+   SELECT customerId from Orders
 );
