@@ -8,6 +8,6 @@ class Solution {
             return nums[i];
           }
         }
-      return nums.length;
+      return 2;
     }
 }
