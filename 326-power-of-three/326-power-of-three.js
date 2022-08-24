@@ -3,5 +3,8 @@
  * @return {boolean}
  */
 var isPowerOfThree = function(n) {
-    return (Math.log10(n) / Math.log10(3)) % 1 == 0;
+	if(n === 3 || n === 1) return true
+	if(n < 3) return false
+
+	return isPowerOfThree(n/3)
 };
