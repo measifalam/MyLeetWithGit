@@ -3,5 +3,5 @@
  * @return {boolean}
  */
 var isPowerOfFour = function(n) {
-    return /^1(00)*$/.test(n.toString(2));
+  return Number.isInteger(Math.log(n) / Math.log(4));
 };
